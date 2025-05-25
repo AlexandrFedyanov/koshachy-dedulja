@@ -93,6 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	  function handleMouseDown(e) {
 		isDrawing = true;
 		lastPoint = getMouse(e, canvas);
+		if (audio.paused) {
+			audio.play().catch(() => {});
+			toggleBtn.textContent = '⏸';
+			audioManual.style.display = "none";
+		}
 	  }
 
 	  function handleMouseMove(e) {
