@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var canvasHeight = height;
   
   coverImage.src = 'image2_s.png';
-  //coverImage.crossOrigin = "Anonymous";
+  coverImage.crossOrigin = "Anonymous";
 
 
   brush.src = 'brush1.png'
