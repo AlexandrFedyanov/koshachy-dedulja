@@ -11,9 +11,20 @@
     <span class="song-title">🎵 Музыка семьи</span>
     <button id="audio-toggle">⏸</button>
   </div>
+  
+   <div class="audio-manual">
+   
+   <div class="arrow">&#11014;</div>
+   
+    <div class="text-frame">
+      <p class="text-message">Включи музло<br>чтобы задать настроение</p>
+    </div>
+
+  </div>
+
 
  <audio id="bg-audio" autoplay muted loop>
-  <source src="audio.mp3" type="audio/mpeg" />
+  <source src="audio.mp3" type="audio/mpeg" muted="muted" />
   Ваш браузер не поддерживает аудио.
 </audio>
 
@@ -21,7 +32,7 @@
 
   <div class="bottom-row">
     <div class="text-frame">
-      <p class="text-message">Сотри меня<br>и получи подарок от семьи</p>
+      <p class="text-message" id="instructions">Сотри меня<br>и получи подарок от семьи</p>
     </div>
 
     <div class="arrow">&#10145;</div>

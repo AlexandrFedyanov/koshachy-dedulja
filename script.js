@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('scratch-canvas');
   const ctx = canvas.getContext('2d');
   const container = document.querySelector('.scratch-frame');
+  const instructions = document.getElementById('instructions');
   const width = container.offsetWidth;
   const height = container.offsetHeight;
   canvas.width = width;
@@ -82,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		console.log(filledInPixels + '%');
 		if (filledInPixels > 50) {
 		  canvas.parentNode.removeChild(canvas);
+		  instructions.innerHTML = "Скинь в чат фото с пивком чтобы узнать где и как забрать свой вертак";
 		  poof();
 		}
 	  }
@@ -118,20 +120,29 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Аудиоплеер логика
-  const audio = document.getElementById('bg-audio');
+const audio = document.getElementById('bg-audio');
 const toggleBtn = document.getElementById('audio-toggle');
-
+const audioManual = document.querySelector('.audio-manual');
 // Размутить и начать при загрузке
 window.addEventListener('load', () => {
-  audio.muted = false;
-  audio.play().catch(() => {});
-  toggleBtn.textContent = '⏸';
+	audio.muted = false;
+	var playPromise = audio.play();
+	if (playPromise !== undefined) {
+        playPromise.then(() => {
+            toggleBtn.textContent = '⏸';
+			audioManual.style.display = "none";
+        }).catch(error => {
+            toggleBtn.textContent = '⏵';
+			audioManual.style.display = "flex";
+        });
+    }
 });
 
 toggleBtn.addEventListener('click', () => {
   if (audio.paused) {
     audio.play().catch(() => {});
     toggleBtn.textContent = '⏸';
+	audioManual.style.display = "none";
   } else {
     audio.pause();
     toggleBtn.textContent = '⏵';
