@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		console.log(filledInPixels + '%');
 		if (filledInPixels > 50) {
 		  canvas.parentNode.removeChild(canvas);
+		  poof();
 		}
 	  }
 	  
@@ -113,9 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	  function handleMouseUp(e) {
 		isDrawing = false;
-		
-  
-		poof();
 	  }
   };
 
@@ -132,8 +130,7 @@ window.addEventListener('load', () => {
 
 toggleBtn.addEventListener('click', () => {
   if (audio.paused) {
-    // audio.play().catch(() => {});
-	  poof();
+    audio.play().catch(() => {});
     toggleBtn.textContent = '⏸';
   } else {
     audio.pause();
