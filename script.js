@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const ctx = canvas.getContext('2d');
   const container = document.querySelector('.scratch-frame');
   const instructions = document.getElementById('instructions');
+  const instructionsArrow = document.getElementById('instructionsArrow');
   const width = container.offsetWidth;
   const height = container.offsetHeight;
   canvas.width = width;
@@ -84,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (filledInPixels > 50) {
 		  canvas.parentNode.removeChild(canvas);
 		  instructions.innerHTML = "Скинь в чат фото с пивком чтобы узнать где и как забрать свой вертак";
+		  instructionsArrow.innerHTML = "&#11013";
 		  poof();
 		}
 	  }
