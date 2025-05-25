@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сотри меня</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="audio-player">
+    <span class="song-title">🎵 Музыка семьи</span>
+    <button id="audio-toggle">⏸</button>
+  </div>
+
+ <audio id="bg-audio" autoplay muted loop>
+  <source src="audio.mp3" type="audio/mpeg" />
+  Ваш браузер не поддерживает аудио.
+</audio>
+
+  <div class="background"></div>
+
+  <div class="bottom-row">
+    <div class="text-frame">
+      <p class="text-message">Сотри меня<br>и получи подарок от семьи</p>
+    </div>
+
+    <div class="arrow">&#10145;</div>
+
+    <div class="scratch-container">
+      <div class="scratch-frame">
+        <img src="image3.png" alt="Подарок" class="hidden-img" />
+        <canvas id="scratch-canvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
