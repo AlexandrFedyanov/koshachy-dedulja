@@ -132,7 +132,8 @@ window.addEventListener('load', () => {
 
 toggleBtn.addEventListener('click', () => {
   if (audio.paused) {
-    audio.play().catch(() => {});
+    // audio.play().catch(() => {});
+	  poof();
     toggleBtn.textContent = '⏸';
   } else {
     audio.pause();
